@@ -5,9 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "heroku-postbuild": "cd react-website && npm install && npm run build"
+    "start": "node index.js"
+
   },
   "dependencies": {
     "axios": "^0.24.0",
