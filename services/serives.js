@@ -60,15 +60,7 @@ exports.neuUser = async (req,res,next) =>{
                 to: req.body.email, // list of receivers
                 subject: "Ihre Terminbestätigung MCOV Schnelltest", // Subject line
                 text: code, // plain text body
-                html: `<!doctype html>
-                <html ⚡4email>
-                  <head>
-                    <meta charset="utf-8">
-                    <style amp4email-boilerplate>body{visibility:hidden}</style>
-                    <script async src="https://cdn.ampproject.org/v0.js"></script>
-                    <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
-                  </head>
-                  <body>
+                html: `
                   <p>Sehr geehrter Frau/Herr ${req.body.Nachname},</p>
                   <p>anbei erhalten Sie Ihre pers&ouml;nliche Registrierungsnummer f&uuml;r den COVID-19 Schnelltest. Bitte beachten Sie, dass diese Registrierungsnummer nur einmal verwendet werden kann.</p>
                   <p>Enclosed you will receive your personal registration number for the COVID-19 rapid test. Please note that this registration number can only be used once.</p>
@@ -80,9 +72,7 @@ exports.neuUser = async (req,res,next) =>{
                   <p>Wir bitten darum, zum vereinbarten Termin p&uuml;nktlich an der Station zu erscheinen.</p>
                   <p>Um den Test durchzuf&uuml;hren ben&ouml;tigen wir ein amtliches Ausweisdokument und Ihre Krankenversicherungskarte. Bei Kindern ohne Ausweisdokument gen&uuml;gt die Krankenversicherungskarte.</p>
                   <p>We kindly ask you to arrive at the test station on time at the above-mentioned appointment. In order to do the test, we need to match your photo ID and health insurance card with the registration. For children, only the health insurance card is required.</p>
-                  <p>Sie erhalten Ihr Antigen-Schnelltest Ergebnis per Email bereits nach ca.15 Min. Im positiven Fall werden Ihre Daten direkt an das f&uuml;r Sie zust&auml;ndige Gesundheitsamt weitergeleitet (Gesetzesvorgabe gem&auml;&szlig; IfSG &sect;6) und Sie m&uuml;ssen sich sofort in h&auml;usliche Quarant&auml;ne begeben. Ein PCR Test ist zus&auml;tzlich notwendig &ndash; bitte wenden Sie sich hierf&uuml;r an Ihren Hausarzt. Das Gesundheitsamt wird mit Ihnen Kontakt aufnehmen und das weitere Vorgehen besprechen.</p>
-                  </body>
-                </html>`,
+                  <p>Sie erhalten Ihr Antigen-Schnelltest Ergebnis per Email bereits nach ca.15 Min. Im positiven Fall werden Ihre Daten direkt an das f&uuml;r Sie zust&auml;ndige Gesundheitsamt weitergeleitet (Gesetzesvorgabe gem&auml;&szlig; IfSG &sect;6) und Sie m&uuml;ssen sich sofort in h&auml;usliche Quarant&auml;ne begeben. Ein PCR Test ist zus&auml;tzlich notwendig &ndash; bitte wenden Sie sich hierf&uuml;r an Ihren Hausarzt. Das Gesundheitsamt wird mit Ihnen Kontakt aufnehmen und das weitere Vorgehen besprechen.</p>`,
                 attachments: [   {   // data uri as an attachment
                     filename: `${id}_QrCOde.png`,
                     path: code
